@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RealSpace3D;
 
 public class CollisionBox : MonoBehaviour
 {
@@ -41,18 +42,20 @@ public class CollisionBox : MonoBehaviour
     {
         if(MagnetSystemManager.instance.boxOnHand == true && isGrabbed)
         {
+            this.GetComponent<SoundOnBoxManager>().SoundOnBox();
+
             float dist = Vector3.Distance(magnetHand.transform.position, transform.position);
             //Debug.Log("Distance : " + dist);
 
             if(dist > 0.3 && dist < 1)
             {
-                Debug.Log("Box détachée, distance : " + dist);
+                //Debug.Log("Box détachée, distance : " + dist);
                 
                 this.transform.position = Vector3.MoveTowards(transform.position, magnetHand.transform.position, 0.5f * Time.deltaTime);
             
             }else if(dist >= 1)
             {
-                Debug.Log("Box détachée, distance : " + dist);
+                //Debug.Log("Box détachée, distance : " + dist);
                 this.transform.position = Vector3.MoveTowards(transform.position, magnetHand.transform.position, 1f * Time.deltaTime);
             }
         }
@@ -71,6 +74,7 @@ public class CollisionBox : MonoBehaviour
                 MagnetSystemManager.instance.boxOnHand = false;
                 isGrabbed = false;
                 Destroy(this.GetComponent("InteractableItem"));
+                Destroy(this.GetComponent<RealSpace3D.RealSpace3D_AudioSource>());
             }
         }
     }
