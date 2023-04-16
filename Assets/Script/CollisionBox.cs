@@ -9,12 +9,14 @@ public class CollisionBox : MonoBehaviour
     Rigidbody m_Rigidbody;
     public GameObject magnetHand;
     public bool isGrabbed = false;
+    public bool isOntheForcefield = false;
 
-    public GameObject forceFieldCenter;
+    public GameObject forceFieldHeardCenter;
+    public GameObject forceFieldSilenceCenter;
 
     private void Start()
     {
-       magnetHand = GameObject.FindWithTag("magnetHand");
+        magnetHand = GameObject.FindWithTag("magnetHand");
     }
 
     void OnCollisionEnter(Collision collision) 
@@ -29,9 +31,6 @@ public class CollisionBox : MonoBehaviour
        }
     }
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
     private void Update()
     {
         DistanceWithHand();
@@ -42,7 +41,8 @@ public class CollisionBox : MonoBehaviour
     {
         if(MagnetSystemManager.instance.boxOnHand == true && isGrabbed)
         {
-            this.GetComponent<SoundOnBoxManager>().SoundOnBox();
+            isOntheForcefield = false;
+            AudiometrieManager.instance.PlaySound();
 
             float dist = Vector3.Distance(magnetHand.transform.position, transform.position);
             //Debug.Log("Distance : " + dist);
@@ -63,18 +63,49 @@ public class CollisionBox : MonoBehaviour
 
     public void DistanceWithForceField()
     {
-        if(MagnetSystemManager.instance.boxOnHand == true && isGrabbed)
-        {
-            float dist = Vector3.Distance(forceFieldCenter.transform.position, transform.position);
-            //Debug.Log("Distance : " + dist);
+        float distFromHand = Vector3.Distance(magnetHand.transform.position, transform.position);
 
-            if(dist < 1.1)
+        if(MagnetSystemManager.instance.boxOnHand == true && isGrabbed && distFromHand > 0.5)
+        {
+            float distFromHeardCenter = Vector3.Distance(forceFieldHeardCenter.transform.position, transform.position);
+            float distFromSilenceCenter = Vector3.Distance(forceFieldSilenceCenter.transform.position, transform.position);
+
+            if(distFromHeardCenter < 1.1 && isOntheForcefield == false)
             {
-                Debug.Log("La box est dans le champ de force");
+                Debug.Log("La box est dans le champ de force d'écoute");
+                
                 MagnetSystemManager.instance.boxOnHand = false;
                 isGrabbed = false;
                 Destroy(this.GetComponent("InteractableItem"));
-                Destroy(this.GetComponent<RealSpace3D.RealSpace3D_AudioSource>());
+                AudiometrieManager.instance.StopSound();
+
+                AudiometrieManager.instance.audiofile_On = AudiometrieManager.instance.nextStep; // correspond a la ligne 17 dans notre fichier
+                AudiometrieManager.instance.nextStep -= 1;
+                Debug.Log("Next Step : " + AudiometrieManager.instance.nextStep);
+
+
+                isOntheForcefield = true;
+                Debug.Log("isOntheForcefield State : " + isOntheForcefield);
+                this.GetComponent<RespawnBox>().RespawnBoxFunction();
+            }
+
+            if(distFromSilenceCenter < 1.1 && isOntheForcefield == false && distFromHand > 0.5)
+            {
+                Debug.Log("La box est dans le champ de force de silence");
+
+                MagnetSystemManager.instance.boxOnHand = false;
+                isGrabbed = false;
+                Destroy(this.GetComponent("InteractableItem"));
+
+                AudiometrieManager.instance.StopSound();
+
+                AudiometrieManager.instance.audiofile_Off = AudiometrieManager.instance.nextStep;
+                AudiometrieManager.instance.nextStep += 1;
+                Debug.Log("Next Step : " + AudiometrieManager.instance.nextStep);
+
+                isOntheForcefield = true;
+                Debug.Log("isOntheForcefield State : " + isOntheForcefield);
+                this.GetComponent<RespawnBox>().RespawnBoxFunction();
             }
         }
     }
