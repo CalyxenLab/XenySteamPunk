@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RealSpace3D;
+
 
 public class CollisionBox : MonoBehaviour
 {
@@ -43,6 +43,7 @@ public class CollisionBox : MonoBehaviour
         {
             isOntheForcefield = false;
             AudiometrieManager.instance.PlaySound();
+            AudiometrieManager.instance.nextStepText.text = "Step : " + AudiometrieManager.instance.nextStep.ToString() + " Value : " + AudiometrieManager.instance.calibrationArray[AudiometrieManager.instance.indexSoundToPlay,AudiometrieManager.instance.nextStep];
 
             float dist = Vector3.Distance(magnetHand.transform.position, transform.position);
             //Debug.Log("Distance : " + dist);
@@ -83,9 +84,8 @@ public class CollisionBox : MonoBehaviour
                 AudiometrieManager.instance.nextStep -= 1;
                 Debug.Log("Next Step : " + AudiometrieManager.instance.nextStep);
 
-
                 isOntheForcefield = true;
-                Debug.Log("isOntheForcefield State : " + isOntheForcefield);
+                //Debug.Log("isOntheForcefield State : " + isOntheForcefield);
                 this.GetComponent<RespawnBox>().RespawnBoxFunction();
             }
 
@@ -96,7 +96,6 @@ public class CollisionBox : MonoBehaviour
                 MagnetSystemManager.instance.boxOnHand = false;
                 isGrabbed = false;
                 Destroy(this.GetComponent("InteractableItem"));
-
                 AudiometrieManager.instance.StopSound();
 
                 AudiometrieManager.instance.audiofile_Off = AudiometrieManager.instance.nextStep;
@@ -104,7 +103,7 @@ public class CollisionBox : MonoBehaviour
                 Debug.Log("Next Step : " + AudiometrieManager.instance.nextStep);
 
                 isOntheForcefield = true;
-                Debug.Log("isOntheForcefield State : " + isOntheForcefield);
+                //Debug.Log("isOntheForcefield State : " + isOntheForcefield);
                 this.GetComponent<RespawnBox>().RespawnBoxFunction();
             }
         }
