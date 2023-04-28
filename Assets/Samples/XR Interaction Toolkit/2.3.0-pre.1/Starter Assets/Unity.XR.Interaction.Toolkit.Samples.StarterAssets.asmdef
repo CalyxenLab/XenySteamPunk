@@ -1,19 +1,3 @@
-{
-    "name": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets",
-    "rootNamespace": "",
-    "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:dc960734dc080426fa6612f1c5fe95f3",
-        "GUID:fe685ec1767f73d42b749ea8045bfe43",
-        "GUID:d8b63aba1907145bea998dd612889d6b"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:af5ac1533498ef6f765cee76450d9fc53180b5b7ee5c7f6fe88e50a73e3cb4c1
+size 583

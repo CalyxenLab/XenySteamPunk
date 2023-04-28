@@ -1,27 +1,3 @@
-using UnityEngine;
-
-namespace AwesomeCharts {
-    [System.Serializable]
-    public class BarSingleAxisConfig : SingleAxisConfig {
-
-        [SerializeField]
-        private BarAxisValueFormatterConfig valueFormatterConfig = new BarAxisValueFormatterConfig ();
-        [SerializeField]
-        private AxisLabelGravity labelsAlignment = AxisLabelGravity.START;
-
-        public BarSingleAxisConfig(){
-            Bounds.MinAutoValue = true;
-            Bounds.MaxAutoValue = true;
-        }
-
-        public AxisLabelGravity LabelsAlignment {
-            get { return labelsAlignment; }
-            set { labelsAlignment = value; }
-        }
-
-        public BarAxisValueFormatterConfig ValueFormatterConfig {
-            get { return valueFormatterConfig; }
-            set { valueFormatterConfig = value; }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0be27284e2c8972430d4473efe24a227379b6203058bc4b29c580ecfcd1ef1c2
+size 821

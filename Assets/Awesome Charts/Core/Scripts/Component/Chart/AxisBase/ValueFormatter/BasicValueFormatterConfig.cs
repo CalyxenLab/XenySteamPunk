@@ -1,23 +1,3 @@
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AwesomeCharts {
-    [System.Serializable]
-    public class BasicValueFormatterConfig {
-
-        [SerializeField]
-        private int valueDecimalPlaces = 1;
-        [SerializeField]
-        private List<string> customValues;
-
-        public int ValueDecimalPlaces {
-            get { return valueDecimalPlaces; }
-            set { valueDecimalPlaces = value; }
-        }
-
-        public List<string> CustomValues {
-            get { return customValues; }
-            set { customValues = value; }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:38416afeb0bab16199346cf0bd3c9b45af23a09084a53b15d750e79bb5673b87
+size 579

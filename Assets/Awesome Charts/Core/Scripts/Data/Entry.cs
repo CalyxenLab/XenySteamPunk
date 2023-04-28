@@ -1,24 +1,3 @@
-﻿using UnityEngine;
-
-namespace AwesomeCharts {
-
-    [System.Serializable]
-    public class Entry {
-
-        [SerializeField]
-        protected float value;
-
-        public Entry () {
-            this.value = 0f;
-        }
-
-        public Entry (float value) {
-            this.value = value;
-        }
-
-        virtual public float Value {
-            get { return Mathf.Max (value, 0); }
-            set { this.value = value; }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2ec519701419416eb18365cbfb01a2df31054e50daa1be7273630172a1bae19
+size 448

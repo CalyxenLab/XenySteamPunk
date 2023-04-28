@@ -1,18 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AwesomeCharts {
-
-    [Serializable]
-    public abstract class AxisChartData : ChartData {
-
-        public abstract float GetMinPosition();
-
-        public abstract float GetMaxPosition();
-
-        public abstract float GetMinValue();
-
-        public abstract float GetMaxValue();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:229a8429436e2ed934631d01252bbf2ef550aa9fc6515cc314e83697b9c88a16
+size 368

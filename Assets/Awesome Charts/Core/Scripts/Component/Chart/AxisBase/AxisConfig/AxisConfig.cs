@@ -1,33 +1,3 @@
-using UnityEngine;
-
-namespace AwesomeCharts {
-    [System.Serializable]
-    public abstract class AxisConfig<V, H>
-        where V : SingleAxisConfig
-    where H : SingleAxisConfig {
-
-        [SerializeField]
-        private V verticalAxisConfig;
-        [SerializeField]
-        private H horizontalAxisConfig;
-
-        protected abstract V CreateDefaultVerticalAxis();
-
-        protected abstract H CreateDefaultHorizontalAxis();
-
-        public AxisConfig(){
-            verticalAxisConfig = CreateDefaultVerticalAxis();
-            horizontalAxisConfig = CreateDefaultHorizontalAxis();
-        }
-
-        public V VerticalAxisConfig {
-            get { return verticalAxisConfig; }
-            set { verticalAxisConfig = value; }
-        }
-
-        public H HorizontalAxisConfig {
-            get { return horizontalAxisConfig; }
-            set { horizontalAxisConfig = value; }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b6e29776645ebf46aa3a94b11a05f7a70c948a464aa5bf3ecc2c4b4f25be2f1d
+size 901

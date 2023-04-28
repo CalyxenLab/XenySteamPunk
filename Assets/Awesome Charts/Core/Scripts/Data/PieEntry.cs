@@ -1,32 +1,3 @@
-﻿using System;
-using UnityEngine;
-
-namespace AwesomeCharts {
-
-    [System.Serializable]
-    public class PieEntry : Entry {
-
-        [SerializeField]
-        private Color color = Color.white;
-        [SerializeField]
-        private String label = "";
-
-        public PieEntry() : base() {
-        }
-
-        public PieEntry(float value, string label, Color color): base(value) {
-            this.label = label;
-            this.color = color;
-        }
-
-        public Color Color {
-            get { return color; }
-            set { color = value; }
-        }
-
-        public String Label {
-            get { return label; }
-            set { label = value; }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ec3e2cd585ed88f9747f9165213ec54fe45dbd4058117d5a9983c23b5611879a
+size 684

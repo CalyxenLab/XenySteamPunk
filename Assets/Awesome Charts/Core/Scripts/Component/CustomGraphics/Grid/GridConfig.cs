@@ -1,36 +1,3 @@
-using System;
-using UnityEngine;
-
-namespace AwesomeCharts {
-    [Serializable]
-    public class GridConfig {
-        [SerializeField]
-        private int verticalLinesCount = Defaults.AXIS_LINES_COUNT;
-        [SerializeField]
-        private int horizontalLinesCount = Defaults.AXIS_LINES_COUNT;
-        [SerializeField]
-        private GridLineConfig verticalLinesConfig = new GridLineConfig ();
-        [SerializeField]
-        private GridLineConfig horizontalLinesConfig = new GridLineConfig ();
-
-        public int VerticalLinesCount {
-            get { return verticalLinesCount; }
-            set {verticalLinesCount = value;}
-        }
-
-        public int HorizontalLinesCount {
-            get { return horizontalLinesCount; }
-            set { horizontalLinesCount = value; }
-        }
-
-        public GridLineConfig VerticalLinesConfig {
-            get { return verticalLinesConfig; }
-            set { verticalLinesConfig = value; }
-        }
-
-        public GridLineConfig HorizontalLinesConfig {
-            get { return horizontalLinesConfig; }
-            set { horizontalLinesConfig = value; }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0d116cc88dd36c4353648aeefb41746825613b180866c3a50c4ec9d6fdf0ecfc
+size 1130

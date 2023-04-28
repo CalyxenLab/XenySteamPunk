@@ -1,14 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace SimplePhysicsToolkit {
-	public class FluidSlammingForce{
-    	public float originalArea;
-    	public float submergedArea;
-    	public float previousSubmergedArea;
-    	public Vector3 triangleCenter;
-    	public Vector3 velocity;
-   		public Vector3 previousVelocity;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ac4e10da4330c003946a8c618b289d822cb467e2d2503e959a613086af53527a
+size 368

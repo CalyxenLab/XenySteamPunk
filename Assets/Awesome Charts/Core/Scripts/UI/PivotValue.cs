@@ -1,16 +1,3 @@
-﻿using UnityEngine;
-
-namespace AwesomeCharts {
-    public class PivotValue {
-
-        public static Vector2 BOTTOM_LEFT = new Vector2(0f, 0f);
-        public static Vector2 BOTTOM_RIGTH = new Vector2(1f, 0f);
-        public static Vector2 BOTTOM_MIDDLE = new Vector2(0.5f, 0f);
-        public static Vector2 TOP_LEFT = new Vector2(0f, 1f);
-        public static Vector2 TOP_RIGHT = new Vector2(1f, 1f);
-        public static Vector2 TOP_MIDDLE = new Vector2(0.5f, 1f);
-        public static Vector2 MIDDLE_LEFT = new Vector2(0f, 0.5f);
-        public static Vector2 MIDDLE_RIGHT = new Vector2(1f, 0.5f);
-        public static Vector2 CENTER = new Vector2(0.5f, 0.5f);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:8fcaff9fd724082328970fd3b310fd47db9b0d63e66dc02bcace25033db5ef5f
+size 677

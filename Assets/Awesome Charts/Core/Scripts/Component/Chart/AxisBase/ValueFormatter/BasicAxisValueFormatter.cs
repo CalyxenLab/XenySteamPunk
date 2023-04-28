@@ -1,29 +1,3 @@
-using System.Collections.Generic;
-
-namespace AwesomeCharts {
-    [System.Serializable]
-    public class BasicAxisValueFormatter : AxisValueFormatter {
-
-        public BasicValueFormatterConfig config = new BasicValueFormatterConfig ();
-
-        public string FormatAxisValue (int index, float value, float minValue, float maxValue) {
-            if (ShouldShowCustomValue (config.CustomValues)) {
-                return GetCustomValueForIndex (config.CustomValues, index);
-            } else {
-                return GetFormattedValue (value, config.ValueDecimalPlaces);
-            }
-        }
-
-        private bool ShouldShowCustomValue (List<string> customValues) {
-            return customValues != null && customValues.Count > 0;
-        }
-
-        private string GetCustomValueForIndex (List<string> customValues, int index) {
-            return customValues.Count > index? customValues[index]: "";
-        }
-
-        private string GetFormattedValue (float value, int decimalPlaces) {
-            return StringUtils.FormatValue (value, decimalPlaces);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:de4412898c3c9df20914d9d9c8a5cd94ac205f156ddd83d8171d3a065b048a6e
+size 1077

@@ -1,19 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace SimplePhysicsToolkit {
-	[RequireComponent(typeof(Collider2D))]
-	public class Killzone2D : MonoBehaviour {
-		void Start(){
-			if (GetComponent<Collider2D>()) {
-				GetComponent<Collider2D>().isTrigger = true; //Force Trigger
-			}
-		}
-
-		void OnTriggerEnter2D(Collider2D col){
-			GameObject currentItem = col.gameObject;
-			Destroy (currentItem);
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2f4bdba6ebb398215234b30bfc8288e9904ea3f8ac861a0f270442119bb1ad7a
+size 446

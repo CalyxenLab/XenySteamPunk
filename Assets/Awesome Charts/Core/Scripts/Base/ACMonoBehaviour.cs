@@ -1,25 +1,3 @@
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AwesomeCharts {
-    public class ACMonoBehaviour : MonoBehaviour {
-
-        private List<GameObject> objectsToRemove = new List<GameObject> ();
-
-        protected virtual void Update () {
-            ExecuteObjectsRemoval();
-        }
-
-        private void ExecuteObjectsRemoval () {
-            foreach (Object target in objectsToRemove) {
-                DestroyImmediate (target);
-            }
-            objectsToRemove.Clear ();
-        }
-
-        public void DestroyDelayed (GameObject target) {
-            target.SetActive(false);
-            objectsToRemove.Add (target);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1d58b03d27d6b8767a0700993884aa5cd953f1ecf1cf6f79290a762e62250670
+size 664

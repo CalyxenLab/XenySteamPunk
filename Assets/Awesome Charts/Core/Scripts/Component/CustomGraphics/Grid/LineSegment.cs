@@ -1,31 +1,3 @@
-using UnityEngine;
-
-namespace AwesomeCharts {
-    public class LineSegment {
-
-        public Vector2 bottomLeft;
-        public Vector2 topRight;
-
-        public LineSegment () {
-            bottomLeft = Vector2.zero;
-            topRight = Vector2.zero;
-        }
-
-        public LineSegment (Vector2 bottomLeft, Vector2 topRight) {
-            this.bottomLeft = bottomLeft;
-            this.topRight = topRight;
-        }
-
-        public Vector2[] CreateSegmentVertices () {
-            return new [] { bottomLeft, GetTopLeft (), topRight, GetBottomRight () };
-        }
-
-        public Vector2 GetTopLeft () {
-            return new Vector2 (bottomLeft.x, topRight.y);
-        }
-
-        public Vector2 GetBottomRight () {
-            return new Vector2 (topRight.x, bottomLeft.y);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bc846ed769de1b315606abdda4dba64565f0e3c0a1b277ccd29e30ed6d83b7c3
+size 802

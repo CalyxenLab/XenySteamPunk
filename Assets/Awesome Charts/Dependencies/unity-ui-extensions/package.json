@@ -1,24 +1,3 @@
-{
-  "name": "unity ui extensions",
-  "version": "2.0.0.0",
-  "description": "An extension project for the Unity3D UI system, all crafted and contributed by the awesome Unity community",
-  "author": "Simon darkside Jackson <@SimonDarksideJ>",
-  "contributors": [{
-  "name": "SimonDarksideJ",
-  "twitter": "@SimonDarksideJ"
-}],
-  "repository": {
-  "type": "hg",
-  "url": "https://ddreaper@bitbucket.org/ddreaper/unity-ui-extensions"
-},
-  "bugs": {
-  "url": "https://bitbucket.org/ddreaper/unity-ui-extensions/issues"
-},
-  "keywords": [
-  "Unity3D",
-  "Unity",
-  "Unity UI",
-  "UI Extensions"
-], 
-  "license": "BSD"
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f3e5267721b9e4b6884279e9986e6859be1489b2e05479c5c3209d24487bd458
+size 614
